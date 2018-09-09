@@ -9,10 +9,11 @@ You must have docker and docker-compose installed
 
 ```bash
 # Download this project
-git clone github.com/
+git clone git@github.com:slobodyanyuk/tf-state-api.git
 # Change directory to project
-cd 
-# 
+cd tf-state-api
+# Build and run the project
+docker-compose up 
 ```
 
 ## API
@@ -21,10 +22,10 @@ cd
 * `GET` : Get Security Groups list
 * `POST` : Create/Update Security Groups
 
-#### /tfstate?vpc_id=<VPC id in AWS fromat>
+#### /tfstate?vpc_id=\<VPC id in AWS fromat\>
 * `GET` : Get Security Groups that reside in specific VPC
 
-#### /tfstate?source_security_group_id=<SG id in AWS fromat>
+#### /tfstate?source_security_group_id=\<SG id in AWS fromat\>
 * `GET` : Get Security Groups that reference specific SG in egress/ingress rules
 
 #### /tfstate/:security_group
