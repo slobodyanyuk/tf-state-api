@@ -16,6 +16,39 @@ cd tf-state-api
 docker-compose up 
 ```
 
+Upload sample data into the application
+```bash
+curl -H "Content-Type: application/json" -X POST -d@sample_data/terraform_test.tfstate http://127.0.0.1:8081/tfstate
+```
+List Security Groups
+```bash
+curl http://127.0.0.1:8081/tfstate
+```
+Get SG by VPC
+```bash
+curl http://127.0.0.1:8081/tfstate?vpc_id=vpc-000000aa
+```
+Get SG by referenced SG id
+```bash
+curl http://127.0.0.1:5000/tfstate?source_security_group_id=sg-0000000ab
+```
+Delete SG from API by name
+```bash
+curl -X DELETE http://127.0.0.1:8081/tfstate/aws_security_group.test2
+```
+Check results by listing Security Groups
+```bash
+curl http://127.0.0.1:8081/tfstate
+```
+Update data by uploading state again
+```bash
+curl -H "Content-Type: application/json" -X POST -d@sample_data/terraform_test.tfstate http://127.0.0.1:8081/tfstate
+```
+Check results by listing Security Groups
+```bash
+curl http://127.0.0.1:8081/tfstate
+```
+
 ## API
 
 #### /tfstate
@@ -30,3 +63,10 @@ docker-compose up
 
 #### /tfstate/:security_group
 * `DELETE` : Delete a Security Group
+
+## Tests
+Tests to be run inside backend image
+```
+# Once docker image was built
+docker run --rm tf-state-api_backend python3 test.py
+```
