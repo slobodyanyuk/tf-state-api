@@ -4,7 +4,7 @@ from resources.controller import TfStateSgs
 from db.inmem import InMem
 
 application = Flask(__name__)
-application.config['tf_version'] = '0.11.1'
+application.config['tf_version'] = '0.11.3'
 api = Api(application)
 
 db = InMem()
