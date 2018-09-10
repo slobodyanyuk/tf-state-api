@@ -48,6 +48,10 @@ Check results by listing Security Groups
 ```bash
 curl http://127.0.0.1:8081/tfstate
 ```
+Test Nginx rate limit
+```bash
+ab -c 20 -n 100  http://127.0.0.1:8081/tfstate?vpc_id=vpc-000000aa
+```
 
 ## API
 
