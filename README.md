@@ -30,7 +30,7 @@ curl http://127.0.0.1:8081/tfstate?vpc_id=vpc-000000aa
 ```
 Get SG by referenced SG id
 ```bash
-curl http://127.0.0.1:5000/tfstate?source_security_group_id=sg-0000000ab
+curl http://127.0.0.1:8081/tfstate?source_security_group_id=sg-0000000ab
 ```
 Delete SG from API by name
 ```bash
