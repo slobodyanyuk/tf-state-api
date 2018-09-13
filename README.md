@@ -59,10 +59,10 @@ ab -c 20 -n 100  http://127.0.0.1:8081/tfstate?vpc_id=vpc-000000aa
 * `GET` : Get Security Groups list
 * `POST` : Create/Update Security Groups
 
-#### /tfstate?vpc_id=\<VPC id in AWS fromat\>
+#### /tfstate?vpc_id=\<VPC id in AWS format\>
 * `GET` : Get Security Groups that reside in specific VPC
 
-#### /tfstate?source_security_group_id=\<SG id in AWS fromat\>
+#### /tfstate?source_security_group_id=\<SG id in AWS format\>
 * `GET` : Get Security Groups that reference specific SG in egress/ingress rules
 
 #### /tfstate/:security_group
